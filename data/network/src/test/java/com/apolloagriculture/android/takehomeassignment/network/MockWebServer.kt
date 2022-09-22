@@ -43,9 +43,8 @@ class MockWebServer {
 
     val forecastSuccessResponse = readFileWithoutNewLineFromResources("forecast_success.json")
 
-
     @Before
-    fun setUp() {
+    private fun setUp() {
         mockHttpClient = HttpClient(MockEngine) {
             engine {
                 addHandler { request ->
@@ -79,7 +78,7 @@ class MockWebServer {
     }
 
     @After
-    fun tearDown() {
+    private fun tearDown() {
         mockHttpClient.close()
     }
 

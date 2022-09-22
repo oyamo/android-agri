@@ -4,7 +4,7 @@ import com.apolloagriculture.android.takehomeassignment.cache.models.ForecastEnt
 import com.apolloagriculture.android.takehomeassignment.domain.models.Forecast
 import com.apolloagriculture.android.takehomeassignment.network.models.ForecastDto
 
-internal fun ForecastDto.toDomain(key: String): ForecastEntity {
+internal fun ForecastDto.toEntity(key: String): ForecastEntity {
     return ForecastEntity(
         day = key,
         lowTemp = this.lowTemp,

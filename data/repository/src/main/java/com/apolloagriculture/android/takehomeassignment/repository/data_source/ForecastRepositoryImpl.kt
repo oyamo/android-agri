@@ -7,6 +7,7 @@ import com.apolloagriculture.android.takehomeassignment.domain.utils.Result
 import com.apolloagriculture.android.takehomeassignment.network.ForecastApiService
 import com.apolloagriculture.android.takehomeassignment.network.utils.safeApiCall
 import com.apolloagriculture.android.takehomeassignment.repository.mappers.toDomain
+import com.apolloagriculture.android.takehomeassignment.repository.mappers.toEntity
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.onEach
@@ -32,7 +33,7 @@ class ForecastRepositoryImpl constructor(
         when (val networkForecast = safeApiCall { forecastApiService.fetchForecast() }) {
             is Result.Error -> throw Exception(networkForecast.error)
             is Result.Success -> {
-                networkForecast.data?.mapValues { it.value.toDomain(key = it.key) }?.values?.toList()
+                networkForecast.data?.mapValues { it.value.toEntity(key = it.key) }?.values?.toList()
                     .also {
                         it?.let { forecasts -> appDatabase.forecastDao().saveForecast(forecasts) }
                     }

@@ -44,5 +44,5 @@ dependencies {
     testImplementation(TestLibraries.truth)
     testImplementation(TestLibraries.coroutinesTest)
 
-    testImplementation(project(BuildModules.network)) // Need in order to share test resources - MockWebServer
+    testImplementation(project(BuildModules.network)) // Needed to be able to share test resources - MockWebServer
 }
