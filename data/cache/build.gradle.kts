@@ -35,8 +35,8 @@ dependencies {
     implementation(Libraries.koinCore)
     implementation(Libraries.koinAndroid)
 
-    implementation(Libraries.roomRuntime)
-    implementation(Libraries.roomKtx)
+    api(Libraries.roomRuntime)
+    api(Libraries.roomKtx)
     kapt(Libraries.roomCompiler)
 
     testImplementation(TestLibraries.jUnit)
