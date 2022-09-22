@@ -9,10 +9,10 @@ buildscript {
     dependencies {
         classpath(ProjectLevelPlugins.kotlin)
         classpath(ProjectLevelPlugins.gradle)
-        // classpath(ProjectLevelPlugins.googleServices)
-        // classpath(ProjectLevelPlugins.firebaseAppDistribution)
-        // classpath(ProjectLevelPlugins.firebaseCrashlytics)
-        // classpath(ProjectLevelPlugins.firebasePerformance)
+        classpath(ProjectLevelPlugins.googleServices)
+        classpath(ProjectLevelPlugins.firebaseAppDistribution)
+        classpath(ProjectLevelPlugins.firebaseCrashlytics)
+        classpath(ProjectLevelPlugins.firebasePerformance)
     }
 }
 

@@ -2,10 +2,10 @@ plugins {
     id(ProjectLevelPlugins.androidApplication)
     kotlin(ProjectLevelPlugins.android)
 
-    // id(ProjectLevelPlugins.appDistribution)
-    // id(ProjectLevelPlugins.googleService)
-    // id(ProjectLevelPlugins.crashlytics)
-    // id(ProjectLevelPlugins.performance)
+    id(ProjectLevelPlugins.appDistribution)
+    id(ProjectLevelPlugins.googleService)
+    id(ProjectLevelPlugins.crashlytics)
+    id(ProjectLevelPlugins.performance)
 }
 
 android {
@@ -29,7 +29,10 @@ android {
     buildTypes {
         getByName("release") {
             isMinifyEnabled = false
-            // proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
     }
 
@@ -76,9 +79,9 @@ dependencies {
 
     implementation(Libraries.coil)
 
-    // implementation(Libraries.firebaseCrashlytics)
-    // implementation(Libraries.firebaseAnalytics)
-    // implementation(Libraries.firebasePerformance)
+    implementation(Libraries.firebaseCrashlytics)
+    implementation(Libraries.firebaseAnalytics)
+    implementation(Libraries.firebasePerformance)
 
     implementation(Libraries.splashScreen)
 
