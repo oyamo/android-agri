@@ -90,6 +90,8 @@ dependencies {
     testImplementation(TestLibraries.androidArchCoreTesting)
     testImplementation(TestLibraries.coroutinesTest)
     testImplementation(TestLibraries.truth)
+    testImplementation(TestLibraries.robolectric)
+    testImplementation(TestLibraries.jUnitCompose)
 
     androidTestImplementation(TestLibraries.espresso)
     androidTestImplementation(TestLibraries.composeUiTest)

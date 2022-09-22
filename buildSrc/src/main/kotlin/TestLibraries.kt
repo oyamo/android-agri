@@ -16,6 +16,8 @@ object TestLibraries {
     const val coroutinesAndroidTest =
         "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines}"
 
+    const val jUnitCompose="androidx.compose.ui:ui-test-junit4:${Versions.compose}"
+
 
     const val mockkAndroid = "io.mockk:mockk-android:${Versions.mockk}"
     const val mockk = "io.mockk:mockk:${Versions.mockk}"
