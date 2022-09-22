@@ -10,22 +10,22 @@ suspend fun <T : Any> safeApiCall(apiCall: suspend () -> T): Result<T> {
         Result.Success(data = apiCall.invoke())
     } catch (e: RedirectResponseException) { // 3xx errors
         Result.Error(
-            errorCode = e.response.status.value,
+            error = e,
             errorMessage = e.localizedMessage
         )
     } catch (e: ClientRequestException) { // 4xx errors
         Result.Error(
-            errorCode = e.response.status.value,
+            error = e,
             errorMessage = e.localizedMessage
         )
     } catch (e: ServerResponseException) { // 5xx errors
         Result.Error(
-            errorCode = e.response.status.value,
+            error = e,
             errorMessage = e.localizedMessage
         )
     } catch (e: Exception) {
         Result.Error(
-            errorCode = 0,
+            error = e,
             errorMessage = e.localizedMessage ?: "An unknown error occurred"
         )
     }

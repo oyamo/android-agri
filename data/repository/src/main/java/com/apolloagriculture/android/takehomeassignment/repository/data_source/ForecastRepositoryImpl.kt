@@ -3,7 +3,9 @@ package com.apolloagriculture.android.takehomeassignment.repository.data_source
 import com.apolloagriculture.android.takehomeassignment.cache.AppDatabase
 import com.apolloagriculture.android.takehomeassignment.domain.models.Forecast
 import com.apolloagriculture.android.takehomeassignment.domain.repository.ForecastRepository
+import com.apolloagriculture.android.takehomeassignment.domain.utils.Result
 import com.apolloagriculture.android.takehomeassignment.network.ForecastApiService
+import com.apolloagriculture.android.takehomeassignment.network.utils.safeApiCall
 import com.apolloagriculture.android.takehomeassignment.repository.mappers.toDomain
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
@@ -15,20 +17,26 @@ class ForecastRepositoryImpl constructor(
 ) : ForecastRepository {
 
     override suspend fun getForecast(): Flow<List<Forecast>> {
-        val result = appDatabase.forecastDao().getForecast()
+        val cachedForecast = appDatabase.forecastDao().getForecast()
             .map { it.map { forecastEntity -> forecastEntity.toDomain() } }
             .onEach { foreCast ->
                 if (foreCast.isEmpty()) fetchForecast()
             }
 
-        return result
+        return cachedForecast
     }
 
+    @Throws(Exception::class)
     override suspend fun fetchForecast() {
-        val response = forecastApiService.fetchForecast()
 
-        response.mapValues { it.value.toDomain(key = it.key) }.values.toList().also {
-            appDatabase.forecastDao().saveForecast(it)
+        when (val networkForecast = safeApiCall { forecastApiService.fetchForecast() }) {
+            is Result.Error -> throw Exception(networkForecast.error)
+            is Result.Success -> {
+                networkForecast.data?.mapValues { it.value.toDomain(key = it.key) }?.values?.toList()
+                    .also {
+                        it?.let { forecasts -> appDatabase.forecastDao().saveForecast(forecasts) }
+                    }
+            }
         }
     }
 
