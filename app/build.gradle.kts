@@ -76,8 +76,6 @@ dependencies {
 
     implementation(Libraries.coil)
 
-    implementation(Libraries.palette)
-
     // implementation(Libraries.firebaseCrashlytics)
     // implementation(Libraries.firebaseAnalytics)
     // implementation(Libraries.firebasePerformance)

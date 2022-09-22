@@ -26,6 +26,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.apolloagriculture.android.takehomeassignment.R
 import com.apolloagriculture.android.takehomeassignment.domain.models.Forecast
+import com.apolloagriculture.android.takehomeassignment.utils.splitCamelCase
 
 @Composable
 fun ForecastCard(modifier: Modifier = Modifier, forecast: Forecast) {
@@ -66,7 +67,7 @@ fun ForecastCard(modifier: Modifier = Modifier, forecast: Forecast) {
         ) {
 
             Text(
-                text = forecast.day.uppercase(),
+                text = forecast.day.splitCamelCase().uppercase(),
                 fontSize = 22.sp,
                 style = MaterialTheme.typography.h6,
                 maxLines = 2,
