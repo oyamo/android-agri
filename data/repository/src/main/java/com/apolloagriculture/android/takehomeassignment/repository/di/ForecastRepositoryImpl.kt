@@ -1,5 +1,6 @@
 package com.apolloagriculture.android.takehomeassignment.repository.di
 
+import android.util.Log
 import com.apolloagriculture.android.takehomeassignment.domain.models.Forecast
 import com.apolloagriculture.android.takehomeassignment.domain.repository.ForecastRepository
 import com.apolloagriculture.android.takehomeassignment.network.ForecastApiService
@@ -9,7 +10,11 @@ class ForecastRepositoryImpl constructor(private val forecastApiService: Forecas
     ForecastRepository {
 
     override suspend fun fetchForecast(): List<Forecast> {
-        return forecastApiService.fetchForecast().map { it.toDomain() }
+        val response = forecastApiService.fetchForecast()
+        Log.e("TAG", "Response: $response")
+        Log.e("TAG", "Response entries: ${response.values}")
+
+        return response.values.map { it.toDomain() }
     }
 
 }
