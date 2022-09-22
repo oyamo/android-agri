@@ -1,6 +1,7 @@
 package com.apolloagriculture.android.takehomeassignment.network.di
 
 import android.util.Log
+import com.apolloagriculture.android.takehomeassignment.network.BuildConfig
 import com.apolloagriculture.android.takehomeassignment.network.ForecastApiService
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.android.Android
@@ -28,7 +29,7 @@ val networkModule = module {
                 }
             }
 
-            /*if (BuildConfig.DEBUG) {
+            if (BuildConfig.DEBUG) {
                 install(Logging) {
                     level = LogLevel.HEADERS
                     logger = object : Logger {
@@ -37,7 +38,7 @@ val networkModule = module {
                         }
                     }
                 }
-            }*/
+            }
 
             install(JsonFeature) {
                 serializer = KotlinxSerializer(
