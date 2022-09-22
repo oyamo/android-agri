@@ -16,8 +16,6 @@ object Versions {
 
     const val coroutines = "1.6.4"
 
-    const val kotlinxDateTime="0.4.0"
-
     const val navigation = "2.5.1"
 
     const val koin = "3.2.0"
@@ -25,10 +23,6 @@ object Versions {
     const val timber = "5.0.1"
 
     const val coil = "1.4.0"
-
-    const val palette = "1.0.0"
-
-    const val media3="1.0.0-alpha03"
 
     const val splashScreen="1.0.0-beta02"
 
@@ -38,9 +32,7 @@ object Versions {
 
     const val kotlinSerialization = "1.6.10"
 
-    const val dataStore = "1.0.0"
-
-    const val room = "2.3.0"
+    const val room = "2.4.3"
 
     //Test Libraries Versions
     const val jUnit = "1.1.3"

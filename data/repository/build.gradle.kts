@@ -43,4 +43,6 @@ dependencies {
     testImplementation(TestLibraries.androidArchCoreTesting)
     testImplementation(TestLibraries.truth)
     testImplementation(TestLibraries.coroutinesTest)
+
+    testImplementation(project(BuildModules.network)) // Needed to be able to share test resources - MockWebServer
 }

@@ -15,8 +15,6 @@ object Libraries {
 
     const val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutines}"
 
-    const val kotlinxDateTime="org.jetbrains.kotlinx:kotlinx-datetime:${Versions.kotlinxDateTime}"
-
     const val navigation = "androidx.navigation:navigation-compose:${Versions.navigation}"
 
     const val koinCore = "io.insert-koin:koin-core:${Versions.koin}"
@@ -27,15 +25,13 @@ object Libraries {
 
     const val timber = "com.jakewharton.timber:timber:${Versions.timber}"
 
-    const val palette = "androidx.palette:palette:${Versions.palette}"
-
     const val firebaseCrashlytics = "com.google.firebase:firebase-crashlytics-ktx:18.2.12"
     const val firebaseAnalytics = "com.google.firebase:firebase-analytics-ktx:21.1.0"
     const val firebasePerformance = "com.google.firebase:firebase-perf-ktx:20.1.0"
 
     const val splashScreen = "androidx.core:core-splashscreen:${Versions.splashScreen}"
 
-    const val leakCanary="com.squareup.leakcanary:leakcanary-android:${Versions.leakCanary}"
+    const val leakCanary = "com.squareup.leakcanary:leakcanary-android:${Versions.leakCanary}"
 
     const val ktorCore = "io.ktor:ktor-client-core:${Versions.ktor}"
     const val ktorSerialization = "io.ktor:ktor-client-serialization:${Versions.ktor}"
@@ -45,6 +41,4 @@ object Libraries {
     const val roomRuntime = "androidx.room:room-runtime:${Versions.room}"
     const val roomKtx = "androidx.room:room-ktx:${Versions.room}"
     const val roomCompiler = "androidx.room:room-compiler:${Versions.room}"
-
-    const val dataStore = "androidx.datastore:datastore-preferences:${Versions.dataStore}"
 }

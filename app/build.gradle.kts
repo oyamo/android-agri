@@ -29,7 +29,10 @@ android {
     buildTypes {
         getByName("release") {
             isMinifyEnabled = false
-            // proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
     }
 
@@ -47,7 +50,7 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion = Versions.compose
+        kotlinCompilerExtensionVersion = Versions.composeCompiler
     }
 }
 
@@ -76,8 +79,6 @@ dependencies {
 
     implementation(Libraries.coil)
 
-    implementation(Libraries.palette)
-
     implementation(Libraries.firebaseCrashlytics)
     implementation(Libraries.firebaseAnalytics)
     implementation(Libraries.firebasePerformance)
@@ -90,6 +91,8 @@ dependencies {
     testImplementation(TestLibraries.androidArchCoreTesting)
     testImplementation(TestLibraries.coroutinesTest)
     testImplementation(TestLibraries.truth)
+    testImplementation(TestLibraries.robolectric)
+    testImplementation(TestLibraries.jUnitCompose)
 
     androidTestImplementation(TestLibraries.espresso)
     androidTestImplementation(TestLibraries.composeUiTest)

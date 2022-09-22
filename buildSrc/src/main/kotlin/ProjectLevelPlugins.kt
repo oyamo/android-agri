@@ -11,6 +11,7 @@ object ProjectLevelPlugins {
     const val javaLibrary="java-library"
     const val kotlinJvm="org.jetbrains.kotlin.jvm"
     const val kotlinAndroid = "org.jetbrains.kotlin.android"
+    const val kapt = "kapt"
     const val android = "android"
     const val ktLint = "org.jlleitschuh.gradle.ktlint"
     const val detekt = "io.gitlab.arturbosch.detekt"
