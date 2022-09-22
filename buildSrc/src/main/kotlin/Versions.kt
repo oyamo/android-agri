@@ -16,8 +16,6 @@ object Versions {
 
     const val coroutines = "1.6.4"
 
-    const val kotlinxDateTime="0.4.0"
-
     const val navigation = "2.5.1"
 
     const val koin = "3.2.0"
@@ -26,10 +24,6 @@ object Versions {
 
     const val coil = "1.4.0"
 
-    const val palette = "1.0.0"
-
-    const val media3="1.0.0-alpha03"
-
     const val splashScreen="1.0.0-beta02"
 
     const val leakCanary="2.9.1"
@@ -37,8 +31,6 @@ object Versions {
     const val ktor = "1.6.7"
 
     const val kotlinSerialization = "1.6.10"
-
-    const val dataStore = "1.0.0"
 
     const val room = "2.4.3"
 
