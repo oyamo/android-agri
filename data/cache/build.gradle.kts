@@ -1,6 +1,7 @@
 plugins {
     id(ProjectLevelPlugins.androidLibrary)
     id(ProjectLevelPlugins.kotlinAndroid)
+    kotlin(ProjectLevelPlugins.kapt)
 }
 
 android {
@@ -34,7 +35,9 @@ dependencies {
     implementation(Libraries.koinCore)
     implementation(Libraries.koinAndroid)
 
-    implementation(Libraries.dataStore)
+    implementation(Libraries.roomRuntime)
+    implementation(Libraries.roomKtx)
+    kapt(Libraries.roomCompiler)
 
     testImplementation(TestLibraries.jUnit)
     testImplementation(TestLibraries.testCore)

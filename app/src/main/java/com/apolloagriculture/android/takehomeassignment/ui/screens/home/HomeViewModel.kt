@@ -11,8 +11,8 @@ import kotlinx.coroutines.launch
 
 class HomeViewModel constructor(private val forecastRepository: ForecastRepository) : ViewModel() {
 
-    private val _forecast = MutableLiveData<List<Forecast>?>(null)
-    val forecast: LiveData<List<Forecast>?> get() = _forecast
+    private val _forecast = MutableLiveData<Map<String, Forecast>>(null)
+    val forecast: LiveData<Map<String, Forecast>> get() = _forecast
 
     init {
         fetchForecast()
