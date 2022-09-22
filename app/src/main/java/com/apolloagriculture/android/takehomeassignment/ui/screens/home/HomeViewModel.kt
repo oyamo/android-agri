@@ -21,8 +21,12 @@ class HomeViewModel constructor(private val forecastRepository: ForecastReposito
     private fun fetchForecast() = viewModelScope.launch {
         _forecastUiState.value = UiState.Loading()
 
-        forecastRepository.getForecast().collect { foreCasts ->
-            _forecastUiState.value = UiState.Success(data = foreCasts)
+        try {
+            forecastRepository.getForecast().collect { foreCasts ->
+                _forecastUiState.value = UiState.Success(data = foreCasts)
+            }
+        } catch (e: Exception) {
+            _forecastUiState.value = UiState.Error(error = e.message)
         }
     }
 
