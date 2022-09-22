@@ -1,6 +1,7 @@
 package com.apolloagriculture.android.takehomeassignment
 
 import android.app.Application
+import com.apolloagriculture.android.takehomeassignment.cache.di.cacheModule
 import com.apolloagriculture.android.takehomeassignment.di.presentationModule
 import com.apolloagriculture.android.takehomeassignment.network.di.networkModule
 import com.apolloagriculture.android.takehomeassignment.repository.di.repositoryModule
@@ -16,7 +17,8 @@ class ApolloAndroidApplication : Application() {
     override fun onCreate() {
         super.onCreate()
 
-        val modules = listOf(networkModule, repositoryModule, presentationModule)
+        val modules = listOf(networkModule, repositoryModule, presentationModule, cacheModule)
+
         startKoin {
             androidLogger(level = Level.NONE)
             androidContext(this@ApolloAndroidApplication)

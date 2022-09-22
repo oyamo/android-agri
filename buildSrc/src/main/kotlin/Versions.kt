@@ -40,7 +40,7 @@ object Versions {
 
     const val dataStore = "1.0.0"
 
-    const val room = "2.3.0"
+    const val room = "2.4.3"
 
     //Test Libraries Versions
     const val jUnit = "1.1.3"
