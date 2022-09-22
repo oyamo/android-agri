@@ -70,7 +70,7 @@ fun MainScreen() {
         backgroundColor = MaterialTheme.colors.surface
     ) {
 
-        Navigation(navController = navController)
+        Navigation(navController = navController, paddingValues = it)
     }
 }
 
