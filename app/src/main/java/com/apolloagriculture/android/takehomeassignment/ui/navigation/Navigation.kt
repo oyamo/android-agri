@@ -7,7 +7,6 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.apolloagriculture.android.takehomeassignment.ui.screens.home.HomeScreen
 
-
 @ExperimentalMaterialApi
 @Composable
 fun Navigation(navController: NavHostController) {
@@ -17,6 +16,5 @@ fun Navigation(navController: NavHostController) {
         composable(route = NavigationItem.Home.route) {
             HomeScreen()
         }
-
     }
 }

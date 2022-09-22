@@ -51,10 +51,8 @@ fun TemperatureCard(
                 textAlign = TextAlign.Center,
                 color = MaterialTheme.colors.onSurface
             )
-
         }
     }
-
 }
 
 @Composable

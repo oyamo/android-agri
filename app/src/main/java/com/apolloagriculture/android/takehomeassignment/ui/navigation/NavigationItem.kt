@@ -6,5 +6,4 @@ import com.apolloagriculture.android.takehomeassignment.R
 sealed class NavigationItem(val route: String, @StringRes val title: Int) {
 
     object Home : NavigationItem("home", R.string.title_home)
-
 }

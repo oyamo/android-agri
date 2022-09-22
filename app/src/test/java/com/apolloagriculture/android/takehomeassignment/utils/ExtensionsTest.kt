@@ -20,5 +20,4 @@ class ExtensionsTest {
 
         assertThat(test.splitCamelCase()).isEqualTo(expected)
     }
-
 }

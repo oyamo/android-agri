@@ -99,7 +99,6 @@ fun ForecastCard(modifier: Modifier = Modifier, forecast: Forecast) {
             }
         }
     }
-
 }
 
 @Composable
@@ -116,5 +115,4 @@ fun Preview() {
             description = "description"
         )
     )
-
 }

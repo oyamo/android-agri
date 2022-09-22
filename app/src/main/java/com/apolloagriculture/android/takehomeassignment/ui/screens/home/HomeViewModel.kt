@@ -29,5 +29,4 @@ class HomeViewModel constructor(private val forecastRepository: ForecastReposito
             _forecastUiState.value = UiState.Error(error = e.message)
         }
     }
-
 }

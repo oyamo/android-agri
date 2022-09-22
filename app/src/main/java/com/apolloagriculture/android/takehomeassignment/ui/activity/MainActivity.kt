@@ -71,7 +71,6 @@ fun MainScreen() {
     ) {
 
         Navigation(navController = navController)
-
     }
 }
 

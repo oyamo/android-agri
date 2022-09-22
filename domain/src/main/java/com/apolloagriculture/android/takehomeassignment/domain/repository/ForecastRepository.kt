@@ -8,5 +8,4 @@ interface ForecastRepository {
     suspend fun getForecast(): Flow<List<Forecast>>
 
     suspend fun fetchForecast()
-
 }

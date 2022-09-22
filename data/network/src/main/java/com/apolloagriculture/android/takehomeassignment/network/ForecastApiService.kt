@@ -14,5 +14,4 @@ class ForecastApiService constructor(private val httpClient: HttpClient) {
         const val BASE_URL = "s3.eu-west-1.amazonaws.com/assets.apolloagriculture.com"
         const val FORECAST_URL = "recruitment/android/weather.json"
     }
-
 }

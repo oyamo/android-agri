@@ -56,16 +56,13 @@ fun HomeScreen(
                         ForecastCard(modifier = Modifier.fillMaxWidth(), forecast = it)
                     }
                 }
-
             }
         }
 
         /**Display error state*/
         is UiState.Error -> {
-
         }
     }
-
 }
 
 @Preview()
