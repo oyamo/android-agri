@@ -12,9 +12,13 @@ import androidx.compose.material.Card
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
@@ -26,6 +30,31 @@ import com.apolloagriculture.android.takehomeassignment.domain.models.Forecast
 @Composable
 fun ForecastCard(modifier: Modifier = Modifier, forecast: Forecast) {
 
+    val forecastIcon by remember {
+        mutableStateOf(
+            when (forecast.icon) {
+                "CLEAR_NIGHT" -> {
+                    R.drawable.ic_weather_clear_night
+                }
+                "CLEAR_DAY" -> {
+                    R.drawable.ic_weather_clear_day
+                }
+                "CLOUD_SUN" -> {
+                    R.drawable.ic_weather_cloud_sun
+                }
+                "SCATTERED_CLOUDS_DAY" -> {
+                    R.drawable.ic_weather_some_clouds
+                }
+                "BROKEN_OVERCAST_CLOUDS_DAY" -> {
+                    R.drawable.ic_weather_one_cloud
+                }
+                else -> {
+                    R.drawable.ic_weather_fog
+                }
+            }
+        )
+    }
+
     Card(modifier = modifier, shape = MaterialTheme.shapes.medium) {
 
         Column(
@@ -33,13 +62,13 @@ fun ForecastCard(modifier: Modifier = Modifier, forecast: Forecast) {
                 .fillMaxSize()
                 .padding(16.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.spacedBy(16.dp)
+            verticalArrangement = Arrangement.spacedBy(24.dp)
         ) {
 
             Text(
                 text = forecast.day.uppercase(),
                 fontSize = 22.sp,
-                style = MaterialTheme.typography.h5,
+                style = MaterialTheme.typography.h6,
                 maxLines = 2,
                 overflow = TextOverflow.Ellipsis,
                 textAlign = TextAlign.Center,
@@ -48,7 +77,7 @@ fun ForecastCard(modifier: Modifier = Modifier, forecast: Forecast) {
 
             Image(
                 modifier = Modifier.size(150.dp),
-                painter = painterResource(id = R.drawable.ic_launcher_foreground),
+                painter = painterResource(id = forecastIcon),
                 contentDescription = forecast.description
             )
 
@@ -57,9 +86,15 @@ fun ForecastCard(modifier: Modifier = Modifier, forecast: Forecast) {
                 horizontalArrangement = Arrangement.SpaceEvenly,
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                TemperatureCard(title = "High", temperature = forecast.highTemp)
+                TemperatureCard(
+                    title = stringResource(R.string.high),
+                    temperature = forecast.highTemp
+                )
 
-                TemperatureCard(title = "Low", temperature = forecast.lowTemp)
+                TemperatureCard(
+                    title = stringResource(R.string.low),
+                    temperature = forecast.lowTemp
+                )
             }
         }
     }

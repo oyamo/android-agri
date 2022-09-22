@@ -9,6 +9,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
@@ -16,9 +17,14 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun TemperatureCard(modifier: Modifier = Modifier, title: String, temperature: Float) {
+fun TemperatureCard(
+    modifier: Modifier = Modifier,
+    title: String,
+    temperature: Float,
+    background: Color = MaterialTheme.colors.surface
+) {
 
-    Card(modifier = modifier, shape = MaterialTheme.shapes.small) {
+    Card(modifier = modifier, backgroundColor = background, shape = MaterialTheme.shapes.small) {
 
         Column(
             modifier = modifier.padding(vertical = 4.dp, horizontal = 16.dp),
