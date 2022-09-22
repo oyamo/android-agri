@@ -12,5 +12,4 @@ import com.apolloagriculture.android.takehomeassignment.cache.models.ForecastEnt
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun forecastDao(): ForecastDao
-
 }

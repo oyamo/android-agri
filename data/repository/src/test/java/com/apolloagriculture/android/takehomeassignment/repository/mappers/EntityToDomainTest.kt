@@ -31,5 +31,4 @@ class EntityToDomainTest {
 
         assertThat(result).isEqualTo(forecast)
     }
-
 }

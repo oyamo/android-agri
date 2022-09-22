@@ -107,5 +107,4 @@ class ForecastDaoTest {
         assertThat(newResult).isNotEqualTo(result)
         assertThat(newResult.size).isEqualTo(2)
     }
-
 }

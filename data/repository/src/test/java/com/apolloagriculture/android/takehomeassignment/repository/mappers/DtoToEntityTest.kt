@@ -30,5 +30,4 @@ class DtoToEntityTest {
 
         assertThat(result).isEqualTo(forecastEntity)
     }
-
 }

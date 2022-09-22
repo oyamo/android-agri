@@ -15,5 +15,4 @@ interface ForecastDao {
 
     @Query("SELECT * FROM `Forecast Table`")
     fun getForecast(): Flow<List<ForecastEntity>>
-
 }

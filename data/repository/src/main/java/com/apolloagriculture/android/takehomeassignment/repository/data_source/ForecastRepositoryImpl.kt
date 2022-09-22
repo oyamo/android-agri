@@ -27,11 +27,12 @@ class ForecastRepositoryImpl constructor(
         return cachedForecast
     }
 
-    @Throws(Exception::class)
     override suspend fun fetchForecast() {
 
         when (val networkForecast = safeApiCall { forecastApiService.fetchForecast() }) {
-            is Result.Error -> throw Exception(networkForecast.error)
+            is Result.Error -> {
+                // Handle exception
+            }
             is Result.Success -> {
                 networkForecast.data?.mapValues { it.value.toEntity(key = it.key) }?.values?.toList()
                     .also {
@@ -40,5 +41,4 @@ class ForecastRepositoryImpl constructor(
             }
         }
     }
-
 }

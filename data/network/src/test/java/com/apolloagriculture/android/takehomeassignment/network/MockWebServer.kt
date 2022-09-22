@@ -57,7 +57,6 @@ class MockWebServer {
                                 status = HttpStatusCode.OK,
                                 headers = headersOf(HttpHeaders.ContentType, "application/json")
                             )
-
                         }
                         else -> error("Unhandled ${request.url.encodedPath}")
                     }
@@ -81,5 +80,4 @@ class MockWebServer {
     private fun tearDown() {
         mockHttpClient.close()
     }
-
 }
