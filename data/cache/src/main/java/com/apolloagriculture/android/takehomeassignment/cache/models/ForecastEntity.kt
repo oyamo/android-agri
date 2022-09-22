@@ -6,9 +6,8 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "Forecast Table")
 data class ForecastEntity(
-    @PrimaryKey(autoGenerate = true)
-    val id: Int=0,
 
+    @PrimaryKey(autoGenerate = false)
     @ColumnInfo(name = "day")
     val day: String,
 
