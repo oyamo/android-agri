@@ -2,10 +2,10 @@ plugins {
     id(ProjectLevelPlugins.androidApplication)
     kotlin(ProjectLevelPlugins.android)
 
-    id(ProjectLevelPlugins.appDistribution)
-    id(ProjectLevelPlugins.googleService)
-    id(ProjectLevelPlugins.crashlytics)
-    id(ProjectLevelPlugins.performance)
+    // id(ProjectLevelPlugins.appDistribution)
+    // id(ProjectLevelPlugins.googleService)
+    // id(ProjectLevelPlugins.crashlytics)
+    // id(ProjectLevelPlugins.performance)
 }
 
 android {
@@ -47,7 +47,7 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion = Versions.compose
+        kotlinCompilerExtensionVersion = Versions.composeCompiler
     }
 }
 
@@ -78,9 +78,9 @@ dependencies {
 
     implementation(Libraries.palette)
 
-    implementation(Libraries.firebaseCrashlytics)
-    implementation(Libraries.firebaseAnalytics)
-    implementation(Libraries.firebasePerformance)
+    // implementation(Libraries.firebaseCrashlytics)
+    // implementation(Libraries.firebaseAnalytics)
+    // implementation(Libraries.firebasePerformance)
 
     implementation(Libraries.splashScreen)
 
