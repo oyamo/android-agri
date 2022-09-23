@@ -12,7 +12,7 @@
         <item name="windowSplashScreenBackground">@color/primary_color</item>
         <item name="windowSplashScreenAnimatedIcon">@drawable/ic_logo</item>
         <item name="windowSplashScreenAnimationDuration">2000</item>
-        <item name="postSplashScreenTheme">@style/Theme.Streamz</item>
+        <item name="postSplashScreenTheme">@style/Theme.ApolloAndroid</item>
     </style>-->
 
 </resources>
